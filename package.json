@@ -1,0 +1,16 @@
+{
+	"name": "og-image-kit",
+	"version": "1.0.0",
+	"description": "Simple OG image generator using satori + resvg-js. Framework-agnostic.",
+	"type": "module",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": ["index.js", "index.d.ts", "fonts/**/*.ttf"],
+	"dependencies": {
+		"satori": "^0.26.0",
+		"@resvg/resvg-js": "^2.6.2"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["@resvg/resvg-js"]
+	}
+}
