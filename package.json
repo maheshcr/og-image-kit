@@ -1,16 +1,65 @@
 {
-	"name": "og-image-kit",
-	"version": "1.0.0",
-	"description": "Simple OG image generator using satori + resvg-js. Framework-agnostic.",
-	"type": "module",
-	"main": "index.js",
-	"types": "index.d.ts",
-	"files": ["index.js", "index.d.ts", "fonts/**/*.ttf"],
-	"dependencies": {
-		"satori": "^0.26.0",
-		"@resvg/resvg-js": "^2.6.2"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": ["@resvg/resvg-js"]
-	}
+  "name": "og-image-kit",
+  "version": "0.1.0",
+  "description": "The simplest way to generate Open Graph images. VDOM helpers + satori + resvg. Works in Node, edge runtimes, and every framework.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Mahesh CR",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maheshcr/og-image-kit"
+  },
+  "keywords": [
+    "og-image",
+    "opengraph",
+    "satori",
+    "resvg",
+    "social-image",
+    "meta-image",
+    "edge",
+    "vercel-og"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./edge": {
+      "types": "./src/renderers/edge.d.ts",
+      "import": "./src/renderers/edge.js"
+    },
+    "./templates": {
+      "types": "./src/templates/index.d.ts",
+      "import": "./src/templates/index.js"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "files": [
+    "src/",
+    "fonts/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "satori": "^0.26.0",
+    "@resvg/resvg-js": "^2.6.2"
+  },
+  "peerDependencies": {
+    "@resvg/resvg-wasm": "^2.6.2"
+  },
+  "peerDependenciesMeta": {
+    "@resvg/resvg-wasm": {
+      "optional": true
+    }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@resvg/resvg-js"
+    ]
+  }
 }
